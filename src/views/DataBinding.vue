@@ -32,6 +32,13 @@
         <br>
         <span>체크 지역 : {{ picked }}</span>
     </div>
+    <div>
+        <img v-bind:src="imgSrc" />
+    </div>
+    <div>
+        <input type="text" v-model="textValue" />
+        <button type="button" v-bind:disabled="textValue==''">Click</button>
+    </div>
 </template>
 <script>
 
@@ -49,7 +56,9 @@ export default{
             picked: '',
             radioValue1: '서울',
             radioValue2: '부산',
-            radioValue3: '제주'
+            radioValue3: '제주',
+            imgSrc: require('@/assets/images/penguin.jpg'), // require : 해당 경로를 import 한다
+            textValue: ""
         };
     },
     setup(){}, // 컴포넌트 API 
